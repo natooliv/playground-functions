@@ -1,3 +1,4 @@
+/* eslint-disable sonarjs/cognitive-complexity */
 // Desafio 1
 function compareTrue(paramA, paramB) {
   if (paramA === true && paramB === true) {
@@ -63,33 +64,37 @@ function catAndMouse(mouse, cat1, cat2) {
 }
 
 // Desafio 8
-function fizzBuzz(arrayNum) {
-  let silabas = [];
-  for (let index = 0; index < arrayNum.length; index += 1) {
-    if (arrayNum[index] % 3 === 0 && arrayNum[index] % 5 === 0) {
-      silabas[index]= 'fizzBuzz'
-    } else if (arrayNum[index] % 3 === 0) {
-      silabas[index]= 'fizz';
-    } else if (arrayNum[index] % 5 === 0) {
-      silabas[index]= 'buzz';
+// eslint-disable-next-line complexity
+function fizzBuzz(array) {
+  let result = [];
+
+  for (let value of array) {
+    if (value % 3 === 0 && value % 5 === 0) {
+      result.push('fizzBuzz');
+    } else if (value % 3 === 0) {
+      result.push('fizz');
+    } else if (value % 5 === 0) {
+      result.push('buzz');
     } else {
-      silabas[index]= 'bug!';
+      result.push('bug!');
     }
   }
-  return silabas;
+  return result;
 }
 // Desafio 9
+
 function encode(palavras) {
   let silaba = "";
-  for (let index = 0; index < palavras.length; index +=1) {
-    if(
-      palavras[index] ==='a'
-      ||palavras[index] === 'e'
-      ||palavras[index] === 'i'
-      ||palavras [index] ==='o'
-      ||palavras[index]==='u'
-    ){
-      silaba=palavras
+  
+  for (let index = 0; index < palavras.length; index += 1) {
+    if (
+      palavras[index] === 'a'
+      || palavras[index] === 'e'
+      || palavras[index] === 'i'
+      || palavras[index] === 'o'
+      || palavras[index] === 'u'
+    ) {
+      silaba = palavras
         .replace(/a/gi, 1)
         .replace(/e/gi, 2)
         .replace(/i/gi, 3)
@@ -97,18 +102,44 @@ function encode(palavras) {
         .replace(/u/gi, 5);
     }
     return silaba
-    
+
   }
- 
+
 }
 function decode() {
-  // seu código aqui
-}
+  let criptD = '';
+  if (
+    string1.includes(1)
+    || string1.includes(2)
+    || string1.includes(3)
+    || string1.includes(4)
+    || string1.includes(5)
+  ) {
+    criptD = string1
+      .replace(/1/g, 'a')
+      .replace(/2/g, 'e')
+      .replace(/3/g, 'i')
+      .replace(/4/g, 'o')
+      .replace(/5/g, 'u');
+  }
+  return criptD;
+}// seu código aqui
 
 // Desafio 10
-function techList() {
-  // seu código aqui
+function techList(array, string) {
+  if (array.length !== "") {
+    for (let key in array) {
+      array[key] = {
+        tech: array[key],
+        name: string,
+      }
+    }
+  } else {
+    return 'Vazio!';
+  }
+  return array;
 }
+
 
 module.exports = {
   calcArea,
