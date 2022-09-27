@@ -54,7 +54,7 @@ function catAndMouse(mouse, cat1, cat2) {
   const corridaCat2 = Math.abs(mouse - cat2);
   if (corridaCat1 < corridaCat2) {
     resposta = 'cat1';
-  } else if(corridaCat2 < corridaCat1) {
+  } else if (corridaCat2 < corridaCat1) {
     resposta = 'cat2';
   } else {
     resposta = 'os gatos trombam e o rato foge';
@@ -63,13 +63,43 @@ function catAndMouse(mouse, cat1, cat2) {
 }
 
 // Desafio 8
-function fizzBuzz() {
-  // seu código aqui
+function fizzBuzz(arrayNum) {
+  let silabas = [];
+  for (let index = 0; index < arrayNum.length; index += 1) {
+    if (arrayNum[index] % 3 === 0 && arrayNum[index] % 5 === 0) {
+      silabas[index]= 'fizzBuzz'
+    } else if (arrayNum[index] % 3 === 0) {
+      silabas[index]= 'fizz';
+    } else if (arrayNum[index] % 5 === 0) {
+      silabas[index]= 'buzz';
+    } else {
+      silabas[index]= 'bug!';
+    }
+  }
+  return silabas;
 }
-
 // Desafio 9
-function encode() {
-  // seu código aqui
+function encode(palavras) {
+  let silaba = "";
+  for (let index = 0; index < palavras.length; index +=1) {
+    if(
+      palavras[index] ==='a'
+      ||palavras[index] === 'e'
+      ||palavras[index] === 'i'
+      ||palavras [index] ==='o'
+      ||palavras[index]==='u'
+    ){
+      silaba=palavras
+        .replace(/a/gi, 1)
+        .replace(/e/gi, 2)
+        .replace(/i/gi, 3)
+        .replace(/o/gi, 4)
+        .replace(/u/gi, 5);
+    }
+    return silaba
+    
+  }
+ 
 }
 function decode() {
   // seu código aqui
