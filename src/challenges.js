@@ -8,13 +8,14 @@ function compareTrue(paramA, paramB) {
 }
 
 // Desafio 2
-function calcArea() {
-  // seu código aqui
+function calcArea(altura, base) {
+  let area = (altura * base) / 2;
+  return area;
 }
 
 // Desafio 3
-function splitSentence() {
-  // seu código aqui
+function splitSentence(variavel) {
+  return variavel.split(' ');
 }
 
 // Desafio 4
