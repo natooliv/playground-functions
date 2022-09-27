@@ -2,9 +2,8 @@
 function compareTrue(paramA, paramB) {
   if (paramA === true && paramB === true) {
     return true;
-  } else {
-    return false;
   }
+  return false;
 }
 
 // Desafio 2
@@ -19,10 +18,12 @@ function splitSentence(variavel) {
 }
 
 // Desafio 4
-function concatName() {
-  // seu código aqui
+function concatName(foguetere) {
+  let primeiroItem = foguetere[0];
+  let ultimoItem = foguetere[foguetere.length - 1];
+  let conc = `${ultimoItem}, ${primeiroItem}`;
+  return conc;
 }
-
 // Desafio 5
 function footballPoints() {
   // seu código aqui
