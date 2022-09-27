@@ -6,7 +6,6 @@ function compareTrue(paramA, paramB) {
   return false;
 }
 
-
 // Desafio 2
 function calcArea(altura, base) {
   let area = (altura * base) / 2;
@@ -22,8 +21,8 @@ function splitSentence(variavel) {
 function concatName(foguetere) {
   let primeiroItem = foguetere[0];
   let ultimoItem = foguetere[foguetere.length - 1];
-  let conc = ultimoItem + ', ' + primeiroItem;
-  return conc;
+  let conc = '';
+  return conc.concat(ultimoItem, ', ', primeiroItem);
 }
 // Desafio 5
 function footballPoints(wins, ties) {
@@ -49,8 +48,18 @@ function highestCount(vetores) {
 }
 
 // Desafio 7
-function catAndMouse() {
-  // seu código aqui
+function catAndMouse(mouse, cat1, cat2) {
+  let resposta = '';
+  const corridaCat1 = Math.abs(mouse - cat1);
+  const corridaCat2 = Math.abs(mouse - cat2);
+  if (corridaCat1 < corridaCat2) {
+    resposta = 'cat1';
+  } else if(corridaCat2 < corridaCat1) {
+    resposta = 'cat2';
+  } else {
+    resposta = 'os gatos trombam e o rato foge';
+  }
+  return resposta;
 }
 
 // Desafio 8
