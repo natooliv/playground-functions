@@ -6,6 +6,7 @@ function compareTrue(paramA, paramB) {
   return false;
 }
 
+
 // Desafio 2
 function calcArea(altura, base) {
   let area = (altura * base) / 2;
@@ -21,12 +22,13 @@ function splitSentence(variavel) {
 function concatName(foguetere) {
   let primeiroItem = foguetere[0];
   let ultimoItem = foguetere[foguetere.length - 1];
-  let conc = `${ultimoItem}, ${primeiroItem}`;
+  let conc = ultimoItem + ', ' + primeiroItem;
   return conc;
 }
 // Desafio 5
-function footballPoints() {
-  // seu código aqui
+function footballPoints(wins, ties) {
+  let pontos = wins * 3 + ties * 1;
+  return pontos;
 }
 
 // Desafio 6
