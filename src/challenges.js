@@ -83,74 +83,49 @@ function fizzBuzz(array) {
 }
 // Desafio 9
 
-function encode(palavras) {
-  let silaba = "";
-  
-  for (let index = 0; index < palavras.length; index += 1) {
-    if (
-      palavras[index] === 'a'
-      || palavras[index] === 'e'
-      || palavras[index] === 'i'
-      || palavras[index] === 'o'
-      || palavras[index] === 'u'
-    ) {
-      silaba = palavras
-        .replace(/a/gi, 1)
-        .replace(/e/gi, 2)
-        .replace(/i/gi, 3)
-        .replace(/o/gi, 4)
-        .replace(/u/gi, 5);
-    }
-    return silaba
-
-  }
-
-}
-function decode() {
-  let criptD = '';
-  if (
-    string1.includes(1)
-    || string1.includes(2)
-    || string1.includes(3)
-    || string1.includes(4)
-    || string1.includes(5)
-  ) {
-    criptD = string1
-      .replace(/1/g, 'a')
-      .replace(/2/g, 'e')
-      .replace(/3/g, 'i')
-      .replace(/4/g, 'o')
-      .replace(/5/g, 'u');
-  }
-  return criptD;
-}// seu código aqui
-
-// Desafio 10
-function techList(array, string) {
-  if (array.length !== "") {
-    for (let key in array) {
-      array[key] = {
-        tech: array[key],
-        name: string,
+function encode(palavra) {
+  let novaPalavra = palavra;
+  const objeto = { a: "1", e: "2", i: "3", o: "4", u: "5" };
+  for (let letra of palavra) {
+    for (let chave in objeto) {
+      if (letra === chave) {
+        novaPalavra = novaPalavra.replace(letra, objeto[chave]);
       }
     }
-  } else {
-    return 'Vazio!';
   }
-  return array;
+  return novaPalavra;
 }
 
 
-module.exports = {
-  calcArea,
-  catAndMouse,
-  compareTrue,
-  concatName,
-  decode,
-  encode,
-  fizzBuzz,
-  footballPoints,
-  highestCount,
-  splitSentence,
-  techList,
-};
+function decode(palavras1) {
+
+}
+    // Desafio 10
+    function techList(sorteio, nome) {
+      let resultado = [];
+      if (sorteio.length === 0) {
+        return 'Vazio!';
+      }
+      let num = sorteio.sort();
+      for (let alpha = 0; alpha < sorteio.length; alpha += 1) {
+        resultado.push({
+          tech: num[alpha],
+          name: nome,
+        });
+      }
+      return resultado;
+    }
+
+    module.exports = {
+      calcArea,
+      catAndMouse,
+      compareTrue,
+      concatName,
+      decode,
+      encode,
+      fizzBuzz,
+      footballPoints,
+      highestCount,
+      splitSentence,
+      techList,
+    };
