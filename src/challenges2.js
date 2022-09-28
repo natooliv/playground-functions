@@ -1,10 +1,11 @@
+const { concatName } = require("./challenges");
+
 // Desafio 11
-function generatePhoneNumber() {
-  // seu código aqui
-}
+function generatePhoneNumber(array) {
+  
 
 // Desafio 12
-function triangleCheck(lineA,lineB,lineC) {
+function triangleCheck(lineA, lineB, lineC) {
   if (lineA < lineB + lineC && lineA > Math.abs(lineB - lineC)) {
     return true;
   }
@@ -18,8 +19,8 @@ function triangleCheck(lineA,lineB,lineC) {
 }
 
 // Desafio 13
-function hydrate() {
-  // seu código aqui
+function hydrate(string) {
+  
 }
 
 module.exports = {
