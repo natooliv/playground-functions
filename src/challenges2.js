@@ -38,25 +38,22 @@ function triangleCheck(lineA, lineB, lineC) {
 }
 
 // Desafio 13
-function hydrate(drinks) {
-  switch (drinks) {
-    case '1 cerveja':
-      return "1 copo de água";
-
-    case "1 Cachaça,5 cervejas  e 1 copo de vinho":
-      return '7 copos de água';
-
-    case " 2 shots de tequila,2 cervejas e 1 corote":
-      return "5 copos de agua";
-
-    case '1 copo de catuaba, 1 cerveja e 1 copo de vinho':
-      return ' 3 copos de agua'
-
-    case '4 caipitinhas e 2 cervejas':
-      return ' 6 copos de agua';
+function hydrate(string) {
+  const regex = /\d+/g;
+  let contador = 0;
+  let resp = '';
+  for (letra of string) {
+    if (letra.match(regex)) {
+      contador += parseInt(letra);
+    }
+    if (contador === 1) {
+      resp = `${contador} copo de água`;
+    } else {
+      resp = `${contador} copos de água`;
+    }
   }
+  return resp;
 }
-
 module.exports = {
   generatePhoneNumber,
   hydrate,
