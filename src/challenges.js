@@ -85,7 +85,7 @@ function fizzBuzz(array) {
 
 function encode(palavra) {
   let novaPalavra = palavra;
-  const objeto = { a: "1", e: "2", i: '3', o: "4", u: "5" };
+  const objeto = { a: '1', e: '2', i: '3', o: '4', u: '5' };
   for (let letra of palavra) {
     for (let chave in objeto) {
       if (letra === chave) {
@@ -98,7 +98,7 @@ function encode(palavra) {
 
 function decode(palavras1) {
   let novoNumero = palavras1;
-  const objeto = { 1: "a", 2: "e", 3: "i", 4: 'o', 5: "u" };
+  const objeto = { 1: 'a', 2: 'e', 3: 'i', 4: 'o', 5: 'u' };
   for (let numero of palavras1) {
     for (let chave in objeto) {
       if (numero === chave) {
