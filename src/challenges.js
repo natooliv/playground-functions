@@ -96,10 +96,20 @@ function encode(palavra) {
   return novaPalavra;
 }
 
-
 function decode(palavras1) {
-
+  let novoNumero = palavras1;
+  const objeto = { 1 :"a", 2: "e", 3: "i", 4: "o", 5: "u" };
+  for (let numero of palavras1) {
+    for (let chave in objeto) {
+      if (numero === chave) {
+        novoNumero = novoNumero.replace(numero, objeto[chave]);
+      }
+    }
+  }
+  return novoNumero;
 }
+
+
     // Desafio 10
     function techList(sorteio, nome) {
       let resultado = [];
